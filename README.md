@@ -1,4 +1,4 @@
- sales-analytics-mysql-powerbi
+Sales-Analytics-mysql-powerbi
 Sales data cleaning and analysis using MySQL, with an interactive Power BI dashboard.
 
  **Project Overview**
