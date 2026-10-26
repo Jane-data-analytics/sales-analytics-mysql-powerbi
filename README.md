@@ -39,7 +39,7 @@ Interactive date slicers and page navigation support report exploration.
  **Repository Files**
 - `01_data_cleaning.sql` — Data cleaning and preparation
 - `02_sales_analysis.sql` — SQL analysis queries
-- `screenshots/` — Dashboard screenshots (to be added)
+-  Dashboard screenshots (to be added)
 
  **Key Skills Demonstrated**
 SQL data cleaning, data standardization, data analysis, CTEs, window functions, revenue analysis, Power BI reporting, and dashboard design.
