@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jane | Data Analyst Portfolio</title>
+  <meta name="description" content="Data Analyst portfolio showcasing SQL, Power BI and sales analytics projects.">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7faf8;
+      color: #18332a;
+      line-height: 1.7;
+    }
+    header {
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      border-bottom: 1px solid #e4ece7;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .logo { font-size: 22px; font-weight: bold; color: #16734a; }
+    nav a {
+      text-decoration: none;
+      color: #345447;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+    .hero {
+      padding: 85px 8%;
+      background: linear-gradient(120deg, #e6f5eb, #f8fbf9);
+    }
+    .tag {
+      color: #16734a;
+      font-weight: bold;
+      letter-spacing: 1px;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.15;
+      margin: 18px 0;
+      max-width: 760px;
+    }
+    .hero p { max-width: 650px; color: #52695e; }
+    .btn {
+      display: inline-block;
+      margin: 24px 12px 0 0;
+      padding: 12px 21px;
+      background: #16734a;
+      color: white;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn.secondary {
+      background: white;
+      color: #16734a;
+      border: 1px solid #16734a;
+    }
+    section { padding: 65px 8%; }
+    .section-title { font-size: 30px; margin-bottom: 10px; }
+    .intro { color: #64776d; margin-bottom: 28px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #e1eae4;
+      background: white;
+      box-shadow: 0 5px 18px #173b2510;
+    }
+    .card h3 { margin-bottom: 10px; }
+    .card p { color: #617268; font-size: 15px; }
+    .project { border-top: 4px solid #219563; }
+    .pill {
+      display: inline-block;
+      background: #e8f5ed;
+      color: #16734a;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      margin: 12px 5px 0 0;
+    }
+    .project-link {
+      display: inline-block;
+      margin-top: 18px;
+      color: #16734a;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .contact { background: #e9f5ed; }
+    footer {
+      padding: 24px 8%;
+      text-align: center;
+      color: #64776d;
+      font-size: 13px;
+    }
+    @media (max-width: 600px) {
+      header { padding: 18px 5%; }
+      nav a { margin-left: 8px; }
+      .hero, section { padding: 48px 6%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Jane | Portfolio</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="tag">Aspiring Data Analyst</div>
+      <h1>Turning Data Into Meaningful Insights</h1>
+      <p>
+        I am building my data analytics skills through hands-on projects
+        using SQL, Power BI and data visualization. Explore my projects
+        and see how I turn raw data into clear business insights.
+      </p>
+      <a class="btn" href="#projects">Explore My Projects</a>
+      <a class="btn secondary"
+         href="https://github.com/Jane-data-analytics">
+         GitHub Profile
+      </a>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="intro">
+        I am an aspiring Data Analyst interested in data cleaning,
+        querying, business intelligence and dashboard development.
+        My portfolio highlights practical projects that demonstrate
+        my learning and analytical approach.
+      </p>
+    </section>
+
+    <section id="skills" style="background:#fff">
+      <h2 class="section-title">Skills & Tools</h2>
+      <p class="intro">Tools I use and practise in my projects.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>SQL & MySQL</h3>
+          <p>Querying, filtering, aggregations and exploring structured data.</p>
+        </div>
+        <div class="card">
+          <h3>Power BI</h3>
+          <p>Interactive dashboards, KPI cards, charts and business reporting.</p>
+        </div>
+        <div class="card">
+          <h3>Data Analytics</h3>
+          <p>Data preparation, trend analysis and communicating insights.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Featured Project</h2>
+      <p class="intro">A practical project from my data analytics journey.</p>
+      <div class="grid">
+        <article class="card project">
+          <h3>Sales Analytics Dashboard</h3>
+          <p>
+            Analysing sales data with MySQL and Power BI to explore
+            revenue, order volume, product performance and sales trends.
+            The project includes documentation and supporting files
+            in the GitHub repository.
+          </p>
+          <span class="pill">MySQL</span>
+          <span class="pill">Power BI</span>
+          <span class="pill">Data Visualization</span>
+          <br>
+          <a class="project-link"
+             href="https://github.com/Jane-data-analytics/sales-analytics-mysql-powerbi">
+             View Project on GitHub →
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="intro">
+        Interested in my work? Visit my GitHub profile to explore
+        my projects and documentation.
+      </p>
+      <a class="btn" href="https://github.com/Jane-data-analytics">
+        Visit My GitHub
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Jane | Data Analyst Portfolio
+  </footer>
+</body>
+</html>
