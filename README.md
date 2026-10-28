@@ -71,9 +71,7 @@ SQL data cleaning, data standardization, aggregations, CTEs, window functions, r
 
 ## Data Source
 
-The project uses a sales dataset originally obtained from Kaggle. The data was used for SQL-based data preparation, sales analysis, and Power BI dashboard development.
-
-*Add the exact Kaggle dataset URL here when available.*
+**Data Source:** [Sales Data Cleaning Practice Dataset — Kaggle](https://www.kaggle.com/datasets/masaud1/sales-data-cleaning-practice-data-set/data)
 
 ## Author
 
