@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Jane Keerthana | Data Analyst Portfolio</title>
-
-  <meta name="description" content="Data Analyst portfolio showcasing MySQL, SQL, Power BI, Excel data analysis and end-to-end analytics projects.">
+  <meta name="description" content="Data Analyst portfolio featuring Sales Analytics and Brazilian E-Commerce Analytics projects using SQL, MySQL, Excel and Power BI.">
 
   <style>
     * {
@@ -167,8 +166,49 @@
       text-decoration: none;
     }
 
-    .case-study {
+    .project-section {
       margin-top: 45px;
+      padding-top: 35px;
+      border-top: 1px solid #e1eae4;
+    }
+
+    .dashboard-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 25px;
+    }
+
+    .dashboard-card {
+      background: white;
+      border: 1px solid #e1eae4;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 18px #173b2510;
+    }
+
+    .dashboard-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-bottom: 1px solid #e1eae4;
+    }
+
+    .dashboard-info {
+      padding: 20px;
+    }
+
+    .dashboard-info h3 {
+      margin-bottom: 8px;
+    }
+
+    .dashboard-info p {
+      color: #617268;
+      font-size: 14px;
+    }
+
+    .case-study {
+      margin-top: 28px;
       padding: 30px;
       background: white;
       border: 1px solid #e1eae4;
@@ -203,46 +243,6 @@
       border: 1px solid #e1eae4;
       border-radius: 10px;
       margin: 20px 0;
-    }
-
-    .dashboard-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
-    }
-
-    .dashboard-card {
-      background: white;
-      border: 1px solid #e1eae4;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 5px 18px #173b2510;
-    }
-
-    .dashboard-card img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-bottom: 1px solid #e1eae4;
-    }
-
-    .dashboard-card .dashboard-info {
-      padding: 20px;
-    }
-
-    .dashboard-card h3 {
-      margin-bottom: 8px;
-    }
-
-    .dashboard-card p {
-      color: #617268;
-      font-size: 14px;
-    }
-
-    .dashboard-card a {
-      color: #16734a;
-      text-decoration: none;
     }
 
     .contact {
@@ -308,14 +308,15 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#olist-case-study">Olist Case Study</a>
+      <a href="#sales-project">Sales Project</a>
+      <a href="#olist-project">Olist Project</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main>
 
-    <!-- Hero Section -->
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="tag">Aspiring Data Analyst</div>
 
@@ -324,7 +325,7 @@
       <p>
         I use SQL, MySQL, Excel and Power BI to explore data,
         analyse business performance, and build interactive dashboards.
-        My portfolio demonstrates hands-on experience in data preparation,
+        My portfolio demonstrates hands-on projects in data preparation,
         KPI reporting, product analysis and business insights.
       </p>
 
@@ -338,7 +339,7 @@
       </a>
     </section>
 
-    <!-- About Section -->
+    <!-- ABOUT SECTION -->
     <section id="about">
       <h2 class="section-title">About Me</h2>
 
@@ -350,7 +351,7 @@
       </p>
     </section>
 
-    <!-- Skills Section -->
+    <!-- SKILLS SECTION -->
     <section id="skills" style="background:#fff">
       <h2 class="section-title">Skills &amp; Tools</h2>
 
@@ -371,8 +372,8 @@
         <article class="card">
           <h3>Power BI</h3>
           <p>
-            Interactive dashboards, KPI cards, data visualization,
-            charts, slicers and business reporting.
+            Interactive dashboards, KPI cards, charts, slicers
+            and business reporting.
           </p>
         </article>
 
@@ -395,328 +396,346 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- PROJECTS SECTION -->
     <section id="projects">
-      <h2 class="section-title">Featured Projects</h2>
+
+      <h2 class="section-title">My Projects</h2>
 
       <p class="intro">
-        Explore my hands-on data analytics projects using MySQL,
-        SQL and Power BI to solve business problems and identify insights.
+        Explore my data analytics projects, including project
+        documentation, SQL analysis and interactive Power BI reports.
       </p>
 
-      <div class="grid">
+      <!-- PROJECT 1: SALES ANALYTICS -->
+      <div id="sales-project">
 
-        <!-- Sales Analytics Project -->
-        <article class="card project">
-          <h3>Sales Analytics Dashboard</h3>
+        <h2 class="section-title">01. Sales Analytics Dashboard</h2>
 
-          <p>
-            Analysing sales data to understand revenue, order volume,
-            product performance, regional performance and monthly
-            sales trends.
+        <p class="intro">
+          Sales performance analysis using MySQL, SQL and Power BI.
+        </p>
+
+        <div class="grid">
+
+          <article class="card project">
+            <h3>Sales Analytics Dashboard</h3>
+
+            <p>
+              Analysing sales data to understand revenue, order volume,
+              product performance, regional performance and monthly
+              sales trends.
+            </p>
+
+            <span class="pill">MySQL</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Power BI</span>
+            <span class="pill">Data Visualization</span>
+
+            <br>
+
+            <a class="project-link"
+               href="https://github.com/Jane-data-analytics/sales-analytics-mysql-powerbi"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Sales Project on GitHub →
+            </a>
+          </article>
+
+        </div>
+
+        <!-- SALES DASHBOARD GALLERY -->
+        <div class="project-section">
+
+          <h2 class="section-title">Sales Dashboard Gallery</h2>
+
+          <p class="intro">
+            Power BI reports created to analyse sales performance,
+            product insights and sales targets.
+            Click an image to view it in full size.
           </p>
 
-          <span class="pill">MySQL</span>
-          <span class="pill">SQL</span>
-          <span class="pill">Power BI</span>
-          <span class="pill">Data Visualization</span>
+          <div class="dashboard-gallery">
 
-          <br>
+            <article class="dashboard-card">
+              <a href="Sales_Analytics_Overview.png"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                <img src="Sales_Analytics_Overview.png"
+                     alt="Sales Analytics Overview Power BI dashboard"
+                     loading="lazy">
+              </a>
 
-          <a class="project-link"
-             href="https://github.com/Jane-data-analytics/sales-analytics-mysql-powerbi"
-             target="_blank"
-             rel="noopener noreferrer">
-            View Project on GitHub →
-          </a>
-        </article>
+              <div class="dashboard-info">
+                <h3>1. Sales Analytics Overview</h3>
+                <p>
+                  Revenue, order volume and overall sales performance.
+                </p>
+              </div>
+            </article>
 
-        <!-- Olist Project -->
-        <article class="card project">
-          <h3>Brazilian E-Commerce Analytics | Olist</h3>
+            <article class="dashboard-card">
+              <a href="Product_Overview.png"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                <img src="Product_Overview.png"
+                     alt="Product Overview Power BI dashboard"
+                     loading="lazy">
+              </a>
+
+              <div class="dashboard-info">
+                <h3>2. Product Overview</h3>
+                <p>
+                  Product performance and sales analysis.
+                </p>
+              </div>
+            </article>
+
+            <article class="dashboard-card">
+              <a href="Sales_Target_Analysis.png"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                <img src="Sales_Target_Analysis.png"
+                     alt="Sales Target Analysis Power BI dashboard"
+                     loading="lazy">
+              </a>
+
+              <div class="dashboard-info">
+                <h3>3. Sales Target Analysis</h3>
+                <p>
+                  Monthly sales performance compared with targets.
+                </p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PROJECT 2: OLIST -->
+      <div id="olist-project" class="project-section">
+
+        <h2 class="section-title">
+          02. Brazilian E-Commerce Analytics | Olist
+        </h2>
+
+        <p class="intro">
+          End-to-end e-commerce analytics project using Excel,
+          MySQL and Power BI.
+        </p>
+
+        <div class="grid">
+
+          <article class="card project">
+
+            <h3>Brazilian E-Commerce Analytics | Olist</h3>
+
+            <p>
+              Analysing Brazilian e-commerce data to understand
+              customer purchasing behaviour, sales performance,
+              product trends, payment methods and delivery patterns.
+            </p>
+
+            <span class="pill">Excel</span>
+            <span class="pill">MySQL</span>
+            <span class="pill">Power BI</span>
+            <span class="pill">E-Commerce Analytics</span>
+
+            <br>
+
+            <a class="project-link"
+               href="https://github.com/Jane-data-analytics/olist-ecommerce-analytics"
+               target="_blank"
+               rel="noopener noreferrer">
+              View Olist Project on GitHub →
+            </a>
+
+          </article>
+
+        </div>
+
+        <!-- OLIST FULL CASE STUDY -->
+        <div class="case-study">
+
+          <h3>1. Project Overview</h3>
 
           <p>
-            An end-to-end e-commerce analytics project exploring
-            customer purchasing behaviour, sales performance,
-            product trends, payment methods and delivery patterns
-            using Brazilian e-commerce data.
+            This project focuses on analysing Brazilian e-commerce
+            transactions using the Olist dataset. The objective is to
+            understand customer purchasing behaviour, sales performance,
+            product performance, payment trends and order delivery patterns.
           </p>
 
-          <span class="pill">Excel</span>
-          <span class="pill">MySQL</span>
-          <span class="pill">Power BI</span>
-          <span class="pill">E-Commerce Analytics</span>
+          <p>
+            The project follows an end-to-end analytics workflow,
+            starting with data preparation and exploration, followed by
+            SQL-based analysis and interactive Power BI reporting.
+          </p>
 
-          <br>
+          <h3>2. Project Objectives</h3>
 
-          <a class="project-link"
-             href="#olist-case-study">
-            Explore Case Study →
+          <ul>
+            <li>Analyse overall e-commerce sales and order performance.</li>
+            <li>Understand customer purchasing behaviour.</li>
+            <li>Identify monthly revenue and order trends.</li>
+            <li>Analyse product performance and payment methods.</li>
+            <li>Explore order status and delivery patterns.</li>
+            <li>Understand customer distribution across Brazilian states.</li>
+            <li>Present business insights through Power BI.</li>
+          </ul>
+
+          <h3>3. Tools &amp; Technologies</h3>
+
+          <ul>
+            <li>
+              <strong>Excel:</strong>
+              Data preparation, cleaning, Pivot Table analysis
+              and exploratory data analysis.
+            </li>
+
+            <li>
+              <strong>MySQL:</strong>
+              Database management, data quality checks,
+              duplicate checks, KPI calculations and SQL analysis.
+            </li>
+
+            <li>
+              <strong>Power BI:</strong>
+              Interactive reporting, KPI cards, charts,
+              data visualization and slicers.
+            </li>
+          </ul>
+
+          <h3>4. Data Preparation &amp; Exploration</h3>
+
+          <p>
+            The Olist dataset contains multiple related tables covering
+            customers, orders, order items, products, sellers, payments,
+            reviews and geographical information.
+          </p>
+
+          <ul>
+            <li>Reviewed the available datasets and their structures.</li>
+            <li>Performed data cleaning and preparation.</li>
+            <li>Explored data using Pivot Tables and summaries.</li>
+            <li>Identified important business metrics and analysis areas.</li>
+          </ul>
+
+          <h3>5. SQL Analysis Using MySQL</h3>
+
+          <p>
+            MySQL was used to examine the prepared e-commerce data
+            and calculate key performance indicators.
+          </p>
+
+          <ul>
+            <li>Database and table structure exploration.</li>
+            <li>NULL value and duplicate record checks.</li>
+            <li>Order and customer analysis.</li>
+            <li>Revenue and payment analysis.</li>
+            <li>Product performance analysis.</li>
+            <li>Monthly sales and order trend analysis.</li>
+            <li>Customer location analysis.</li>
+          </ul>
+
+          <h3>6. Power BI Dashboard</h3>
+
+          <p>
+            An interactive Power BI dashboard was developed to present
+            the key findings and business performance indicators.
+          </p>
+
+          <a
+            href="https://raw.githubusercontent.com/Jane-data-analytics/olist-ecommerce-analytics/main/images/Olist%20E-commerce%20Dashboard.png"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <img
+              class="case-study-image"
+              src="https://raw.githubusercontent.com/Jane-data-analytics/olist-ecommerce-analytics/main/images/Olist%20E-commerce%20Dashboard.png"
+              alt="Brazilian Olist E-Commerce Analytics Power BI Dashboard"
+              loading="lazy">
           </a>
 
-          <br>
+          <h3>7. Dashboard Highlights</h3>
+
+          <ul>
+            <li>Total Orders</li>
+            <li>Total Revenue</li>
+            <li>Total Customers</li>
+            <li>Average Order Value (AOV)</li>
+            <li>Monthly Revenue and Order Trends</li>
+            <li>Order Status Analysis</li>
+            <li>Top 5 Products Analysis</li>
+            <li>Payment Methods Analysis</li>
+            <li>Orders by Customer State</li>
+          </ul>
+
+          <p>
+            Interactive slicers allow users to explore the report
+            by Year, Month and Customer State.
+          </p>
+
+          <h3>8. Key Analysis Areas</h3>
+
+          <ul>
+            <li>
+              <strong>Sales Performance:</strong>
+              Understanding revenue, order volume and monthly trends.
+            </li>
+
+            <li>
+              <strong>Customer Analysis:</strong>
+              Exploring customer distribution and purchasing behaviour.
+            </li>
+
+            <li>
+              <strong>Product Analysis:</strong>
+              Identifying products with strong sales performance.
+            </li>
+
+            <li>
+              <strong>Payment Analysis:</strong>
+              Understanding customer payment method preferences.
+            </li>
+
+            <li>
+              <strong>Order Analysis:</strong>
+              Reviewing order statuses and delivery-related patterns.
+            </li>
+          </ul>
+
+          <h3>9. Project Outcome</h3>
+
+          <p>
+            This project provided practical experience in working
+            with a multi-table e-commerce dataset, preparing data,
+            performing SQL analysis and developing an interactive
+            Power BI dashboard.
+          </p>
+
+          <p>
+            It demonstrates an end-to-end approach to data analytics
+            and the ability to transform business data into meaningful
+            insights.
+          </p>
 
           <a class="project-link"
              href="https://github.com/Jane-data-analytics/olist-ecommerce-analytics"
              target="_blank"
              rel="noopener noreferrer">
-            View Project on GitHub →
+            View Complete Olist Project on GitHub →
           </a>
-        </article>
+
+        </div>
 
       </div>
 
-      <!-- Olist Full Case Study -->
-      <div class="case-study" id="olist-case-study">
-
-        <h2 class="section-title">
-          Brazilian E-Commerce Analytics | Olist
-        </h2>
-
-        <p class="intro">
-          End-to-End Data Analytics Project
-        </p>
-
-        <h3>1. Project Overview</h3>
-
-        <p>
-          This project focuses on analysing Brazilian e-commerce
-          transactions using the Olist dataset. The objective is to
-          understand customer purchasing behaviour, sales performance,
-          product performance, payment trends and order delivery patterns.
-        </p>
-
-        <p>
-          The project follows an end-to-end analytics workflow,
-          starting with data preparation and exploration, followed by
-          SQL-based analysis and interactive Power BI reporting.
-        </p>
-
-        <h3>2. Project Objectives</h3>
-
-        <ul>
-          <li>Analyse overall e-commerce sales and order performance.</li>
-          <li>Understand customer purchasing behaviour.</li>
-          <li>Identify monthly revenue and order trends.</li>
-          <li>Analyse product performance and payment methods.</li>
-          <li>Explore order status and delivery patterns.</li>
-          <li>Understand customer distribution across Brazilian states.</li>
-          <li>Present meaningful business insights through Power BI.</li>
-        </ul>
-
-        <h3>3. Tools &amp; Technologies</h3>
-
-        <ul>
-          <li>
-            <strong>Excel:</strong>
-            Data preparation, cleaning, Pivot Table analysis
-            and exploratory data analysis.
-          </li>
-
-          <li>
-            <strong>MySQL:</strong>
-            Database management, data quality checks,
-            duplicate checks, KPI calculations and SQL analysis.
-          </li>
-
-          <li>
-            <strong>Power BI:</strong>
-            Interactive reporting, KPI cards, charts,
-            data visualization and slicers.
-          </li>
-        </ul>
-
-        <h3>4. Data Preparation &amp; Exploration</h3>
-
-        <p>
-          The Olist dataset contains multiple related tables covering
-          customers, orders, order items, products, sellers, payments,
-          reviews and geographical information.
-        </p>
-
-        <ul>
-          <li>Reviewed the available datasets and their structures.</li>
-          <li>Performed data cleaning and preparation.</li>
-          <li>Explored data using Pivot Tables and summaries.</li>
-          <li>Identified important business metrics and analysis areas.</li>
-        </ul>
-
-        <h3>5. SQL Analysis Using MySQL</h3>
-
-        <p>
-          MySQL was used to examine the prepared e-commerce data
-          and calculate key performance indicators.
-        </p>
-
-        <ul>
-          <li>Database and table structure exploration.</li>
-          <li>NULL value and duplicate record checks.</li>
-          <li>Order and customer analysis.</li>
-          <li>Revenue and payment analysis.</li>
-          <li>Product performance analysis.</li>
-          <li>Monthly sales and order trend analysis.</li>
-          <li>Customer location analysis.</li>
-        </ul>
-
-        <h3>6. Power BI Dashboard</h3>
-
-        <p>
-          An interactive Power BI dashboard was developed to present
-          the key findings and business performance indicators.
-        </p>
-
-        <a
-          href="https://raw.githubusercontent.com/Jane-data-analytics/olist-ecommerce-analytics/main/images/Olist%20E-commerce%20Dashboard.png"
-          target="_blank"
-          rel="noopener noreferrer">
-
-          <img
-            class="case-study-image"
-            src="https://raw.githubusercontent.com/Jane-data-analytics/olist-ecommerce-analytics/main/images/Olist%20E-commerce%20Dashboard.png"
-            alt="Brazilian Olist E-Commerce Analytics Power BI Dashboard"
-            loading="lazy">
-        </a>
-
-        <h3>7. Dashboard Highlights</h3>
-
-        <ul>
-          <li>Total Orders</li>
-          <li>Total Revenue</li>
-          <li>Total Customers</li>
-          <li>Average Order Value (AOV)</li>
-          <li>Monthly Revenue and Order Trends</li>
-          <li>Order Status Analysis</li>
-          <li>Top 5 Products Analysis</li>
-          <li>Payment Methods Analysis</li>
-          <li>Orders by Customer State</li>
-        </ul>
-
-        <p>
-          Interactive slicers allow users to explore the report
-          by Year, Month and Customer State.
-        </p>
-
-        <h3>8. Key Analysis Areas</h3>
-
-        <ul>
-          <li>
-            <strong>Sales Performance:</strong>
-            Understanding revenue, order volume and monthly trends.
-          </li>
-
-          <li>
-            <strong>Customer Analysis:</strong>
-            Exploring customer distribution and purchasing behaviour.
-          </li>
-
-          <li>
-            <strong>Product Analysis:</strong>
-            Identifying products with strong sales performance.
-          </li>
-
-          <li>
-            <strong>Payment Analysis:</strong>
-            Understanding customer payment method preferences.
-          </li>
-
-          <li>
-            <strong>Order Analysis:</strong>
-            Reviewing order statuses and delivery-related patterns.
-          </li>
-        </ul>
-
-        <h3>9. Project Outcome</h3>
-
-        <p>
-          This project provided practical experience in working
-          with a multi-table e-commerce dataset, preparing data,
-          performing SQL analysis and developing an interactive
-          Power BI dashboard.
-        </p>
-
-        <p>
-          It demonstrates an end-to-end approach to data analytics
-          and the ability to transform raw business data into
-          meaningful insights.
-        </p>
-
-        <a class="project-link"
-           href="https://github.com/Jane-data-analytics/olist-ecommerce-analytics"
-           target="_blank"
-           rel="noopener noreferrer">
-          View Complete Olist Project on GitHub →
-        </a>
-
-      </div>
-
-      <!-- Sales Dashboard Gallery -->
-      <h2 class="section-title" style="margin-top:45px">
-        Dashboard Gallery
-      </h2>
-
-      <p class="intro">
-        A visual overview of my Power BI reports.
-        Click any dashboard image to view it in full size.
-      </p>
-
-      <div class="dashboard-gallery">
-
-        <article class="dashboard-card">
-          <a href="Sales_Analytics_Overview.png"
-             target="_blank"
-             rel="noopener noreferrer">
-            <img src="Sales_Analytics_Overview.png"
-                 alt="Sales Analytics Overview Power BI dashboard"
-                 loading="lazy">
-          </a>
-
-          <div class="dashboard-info">
-            <h3>1. Sales Analytics Overview</h3>
-            <p>
-              Revenue, order volume and overall sales performance.
-            </p>
-          </div>
-        </article>
-
-        <article class="dashboard-card">
-          <a href="Product_Overview.png"
-             target="_blank"
-             rel="noopener noreferrer">
-            <img src="Product_Overview.png"
-                 alt="Product Overview Power BI dashboard"
-                 loading="lazy">
-          </a>
-
-          <div class="dashboard-info">
-            <h3>2. Product Overview</h3>
-            <p>
-              Product performance and sales analysis.
-            </p>
-          </div>
-        </article>
-
-        <article class="dashboard-card">
-          <a href="Sales_Target_Analysis.png"
-             target="_blank"
-             rel="noopener noreferrer">
-            <img src="Sales_Target_Analysis.png"
-                 alt="Sales Target Analysis Power BI dashboard"
-                 loading="lazy">
-          </a>
-
-          <div class="dashboard-info">
-            <h3>3. Sales Target Analysis</h3>
-            <p>
-              Monthly sales performance compared with targets.
-            </p>
-          </div>
-        </article>
-
-      </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- CONTACT SECTION -->
     <section class="contact" id="contact">
+
       <h2 class="section-title">Let's Connect</h2>
 
       <p class="intro">
@@ -735,7 +754,7 @@
       </p>
 
       <p>
-        <strong>Featured Project 1:</strong><br>
+        <strong>Project 1:</strong><br>
         <a href="https://github.com/Jane-data-analytics/sales-analytics-mysql-powerbi"
            target="_blank"
            rel="noopener noreferrer">
@@ -744,7 +763,7 @@
       </p>
 
       <p>
-        <strong>Featured Project 2:</strong><br>
+        <strong>Project 2:</strong><br>
         <a href="https://github.com/Jane-data-analytics/olist-ecommerce-analytics"
            target="_blank"
            rel="noopener noreferrer">
@@ -758,6 +777,7 @@
          rel="noopener noreferrer">
         Visit My GitHub →
       </a>
+
     </section>
 
   </main>
