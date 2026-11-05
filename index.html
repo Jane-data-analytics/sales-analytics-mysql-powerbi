@@ -2,1219 +2,1305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Jane Keerthana | Aspiring Data Analyst Portfolio">
-  <title>Jane Keerthana | Data Analyst Portfolio</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #0b1120;
-      --surface: #111b2e;
-      --surface-light: #17243a;
-      --text: #f1f5f9;
-      --muted: #a6b2c5;
-      --accent: #2dd4bf;
-      --accent-dark: #0f766e;
-      --border: rgba(148, 163, 184, 0.17);
-      --shadow: 0 18px 50px rgba(0,0,0,.22);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
-    }
-
-    .section {
-      padding: 90px 0;
-      scroll-margin-top: 85px;
-    }
-
-    .section-label {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: .78rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
-
-    .section-intro {
-      color: var(--muted);
-      max-width: 700px;
-      margin-bottom: 38px;
-    }
-
-    .accent {
-      color: var(--accent);
-    }
-
-    /* Navigation */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(11, 17, 32, .92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    nav {
-      min-height: 74px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: .9rem;
-      transition: .25s;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    /* Hero */
-
-    .hero {
-      min-height: 590px;
-      display: flex;
-      align-items: center;
-      padding: 100px 0 85px;
-      background:
-        radial-gradient(circle at 80% 25%, rgba(45,212,191,.10), transparent 28%),
-        radial-gradient(circle at 15% 80%, rgba(20,184,166,.07), transparent 30%);
-    }
-
-    .hero-content {
-      max-width: 850px;
-    }
-
-    .availability {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--accent);
-      background: rgba(45,212,191,.08);
-      border: 1px solid rgba(45,212,191,.25);
-      padding: 8px 14px;
-      border-radius: 30px;
-      font-size: .85rem;
-      margin-bottom: 28px;
-    }
-
-    .availability::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      background: var(--accent);
-      border-radius: 50%;
-    }
-
-    .hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(2.8rem, 7vw, 5.4rem);
-      line-height: 1.06;
-      letter-spacing: -2px;
-      margin-bottom: 20px;
-    }
-
-    .hero h2 {
-      font-size: clamp(1.1rem, 3vw, 1.55rem);
-      color: var(--muted);
-      font-weight: 500;
-      margin-bottom: 22px;
-    }
-
-    .hero p {
-      color: var(--muted);
-      max-width: 680px;
-      font-size: 1.05rem;
-      margin-bottom: 32px;
-    }
-
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 12px 22px;
-      border-radius: 8px;
-      font-weight: 700;
-      font-size: .93rem;
-      transition: .25s;
-      border: 1px solid var(--accent);
-    }
-
-    .btn-primary {
-      color: #062c2a;
-      background: var(--accent);
-    }
-
-    .btn-primary:hover {
-      background: #5eead4;
-      transform: translateY(-3px);
-    }
-
-    .btn-outline {
-      color: var(--accent);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: rgba(45,212,191,.1);
-      transform: translateY(-3px);
-    }
-
-    /* Cards and layouts */
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      transition: .25s;
-    }
-
-    .card:hover {
-      border-color: rgba(45,212,191,.45);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .card h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-    }
-
-    .card p, .card li {
-      color: var(--muted);
-    }
-
-    /* About */
-
-    .about-text {
-      color: var(--muted);
-      font-size: 1.02rem;
-      max-width: 850px;
-    }
-
-    .profile-facts {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 15px;
-      margin-top: 28px;
-    }
-
-    .fact {
-      padding: 17px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      border-radius: 10px;
-    }
-
-    .fact small {
-      display: block;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .fact strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    /* Skills */
-
-    .skill-card {
-      padding: 24px;
-    }
-
-    .skill-card .skill-icon {
-      color: var(--accent);
-      font-size: 1.5rem;
-      margin-bottom: 14px;
-    }
-
-    .skill-card h3 {
-      margin-bottom: 8px;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 16px;
-    }
-
-    .tag {
-      color: #b9fff3;
-      background: rgba(45,212,191,.09);
-      border: 1px solid rgba(45,212,191,.2);
-      padding: 6px 11px;
-      border-radius: 6px;
-      font-size: .82rem;
-    }
-
-    /* Experience and education */
-
-    .timeline {
-      display: grid;
-      gap: 20px;
-    }
-
-    .timeline-card {
-      position: relative;
-      padding-left: 28px;
-    }
-
-    .timeline-card::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(45,212,191,.12);
-    }
-
-    .timeline-date {
-      color: var(--accent);
-      font-size: .87rem;
-      font-weight: 700;
-      margin-bottom: 5px;
-    }
-
-    .timeline-card h3 {
-      margin-bottom: 4px;
-    }
-
-    .timeline-card ul {
-      padding-left: 20px;
-      margin-top: 12px;
-    }
-
-    .timeline-card li {
-      margin-bottom: 5px;
-    }
-
-    /* Projects */
-
-    .project-number {
-      color: var(--accent);
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .9rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-
-    .project-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(1.65rem, 3vw, 2.2rem);
-      margin-bottom: 12px;
-    }
-
-    .project-description {
-      color: var(--muted);
-      max-width: 850px;
-      margin-bottom: 20px;
-    }
-
-    .project-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .case-study {
-      margin-top: 28px;
-    }
-
-    .case-study h3 {
-      color: var(--text);
-      font-size: 1.12rem;
-      margin-bottom: 9px;
-    }
-
-    .case-study p, .case-study li {
-      color: var(--muted);
-    }
-
-    .case-study ul, .case-study ol {
-      padding-left: 21px;
-    }
-
-    .case-study li {
-      margin-bottom: 7px;
-    }
-
-    .case-block {
-      padding: 23px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      margin-bottom: 16px;
-    }
-
-    .case-block h3 {
-      color: var(--accent);
-    }
-
-    /* Dashboard gallery */
-
-    .gallery {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-top: 28px;
-    }
-
-    .dashboard-card {
-      overflow: hidden;
-      border-radius: 14px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-    }
-
-    .dashboard-card img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      background: #fff;
-    }
-
-    .dashboard-caption {
-      padding: 15px 18px;
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .dashboard-caption span {
-      display: block;
-      color: var(--muted);
-      font-weight: 400;
-      font-size: .85rem;
-    }
-
-    .dashboard-link {
-      color: var(--accent);
-      display: inline-block;
-      margin-top: 12px;
-      font-size: .9rem;
-    }
-
-    /* Certifications */
-
-    .certificate-card {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .certificate-card .certificate-icon {
-      color: var(--accent);
-      font-size: 1.6rem;
-    }
-
-    .certificate-card p {
-      font-size: .9rem;
-    }
-
-    /* Contact and footer */
-
-    .contact-panel {
-      background: linear-gradient(135deg, #12283a, #102c31);
-      border: 1px solid rgba(45,212,191,.22);
-      border-radius: 18px;
-      padding: 42px;
-    }
-
-    .contact-panel p {
-      color: var(--muted);
-      max-width: 650px;
-      margin-bottom: 25px;
-    }
-
-    footer {
-      padding: 28px 0;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      text-align: center;
-      font-size: .88rem;
-    }
-
-    /* Responsive */
-
-    @media (max-width: 850px) {
-      .nav-links {
-        gap: 13px;
-      }
-
-      .nav-links a {
-        font-size: .8rem;
-      }
-
-      .grid-3 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 650px) {
-      .section {
-        padding: 68px 0;
-      }
-
-      nav {
-        padding: 14px 0;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        width: 100%;
-        overflow-x: auto;
-        padding-bottom: 5px;
-        white-space: nowrap;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 85px 0 70px;
-      }
-
-      .hero h1 {
-        letter-spacing: -1px;
-      }
-
-      .grid-2, .grid-3, .profile-facts {
-        grid-template-columns: 1fr;
-      }
-
-      .card {
-        padding: 22px;
-      }
-
-      .contact-panel {
-        padding: 28px 22px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jane Keerthana - Data Analyst Portfolio">
+<title>Jane Keerthana | Data Analyst</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0B1020;
+  --surface: #141B2D;
+  --surface-light: #1E293B;
+  --text: #F8FAFC;
+  --muted: #A6B1C2;
+  --accent: #A78BFA;
+  --accent2: #38BDF8;
+  --border: rgba(167,139,250,.18);
+  --shadow: 0 18px 50px rgba(0,0,0,.30);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1140px, 90%);
+  margin: auto;
+}
+
+.section {
+  padding: 85px 0;
+  scroll-margin-top: 90px;
+}
+
+.section-label {
+  color: var(--accent);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.section-intro {
+  color: var(--muted);
+  max-width: 720px;
+  margin-bottom: 35px;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(11,16,32,.94);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border);
+}
+
+nav {
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 23px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: .87rem;
+  transition: .2s;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+/* HERO */
+
+.hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  padding: 90px 0;
+  background:
+    radial-gradient(circle at 80% 25%, rgba(167,139,250,.13), transparent 30%),
+    radial-gradient(circle at 15% 85%, rgba(56,189,248,.08), transparent 30%);
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  color: var(--accent);
+  background: rgba(167,139,250,.09);
+  border: 1px solid var(--border);
+  font-size: .85rem;
+  margin-bottom: 28px;
+}
+
+.availability::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+}
+
+.hero h2 {
+  font-size: clamp(1.1rem, 3vw, 1.55rem);
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  max-width: 700px;
+  color: var(--muted);
+  font-size: 1.03rem;
+  margin-bottom: 30px;
+}
+
+/* BUTTONS */
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 21px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: .9rem;
+  border: 1px solid var(--accent);
+  transition: .25s;
+}
+
+.btn-primary {
+  color: #160E2E;
+  background: var(--accent);
+}
+
+.btn-primary:hover {
+  background: #C4B5FD;
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  color: var(--accent);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: rgba(167,139,250,.10);
+  transform: translateY(-3px);
+}
+
+/* CARDS */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 25px;
+  transition: .25s;
+}
+
+.card:hover {
+  border-color: rgba(167,139,250,.48);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 20px;
+}
+
+.card h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.card p,
+.card li {
+  color: var(--muted);
+}
+
+/* ABOUT */
+
+.about-text {
+  color: var(--muted);
+  max-width: 900px;
+  font-size: 1.02rem;
+}
+
+.profile-facts {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+  margin-top: 25px;
+}
+
+.fact {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 10px;
+}
+
+.fact small {
+  display: block;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.fact strong {
+  font-weight: 600;
+}
+
+/* SKILLS */
+
+.skill-card {
+  padding: 23px;
+}
+
+.skill-icon {
+  color: var(--accent);
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.tag {
+  color: #D8CCFF;
+  background: rgba(167,139,250,.09);
+  border: 1px solid rgba(167,139,250,.20);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: .8rem;
+}
+
+/* EXPERIENCE */
+
+.timeline {
+  display: grid;
+  gap: 18px;
+}
+
+.timeline-card {
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px rgba(167,139,250,.12);
+}
+
+.timeline-date {
+  color: var(--accent);
+  font-size: .87rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.timeline-card ul {
+  padding-left: 20px;
+  margin-top: 12px;
+}
+
+.timeline-card li {
+  margin-bottom: 5px;
+}
+
+/* CERTIFICATES */
+
+.certificate-icon {
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+/* PROJECT HEADINGS */
+
+.project-section {
+  margin-top: 85px;
+  scroll-margin-top: 95px;
+}
+
+.project-section:first-of-type {
+  margin-top: 0;
+}
+
+.project-number {
+  color: var(--accent);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: .88rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.project-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  line-height: 1.25;
+  margin-bottom: 13px;
+}
+
+.project-description {
+  color: var(--muted);
+  max-width: 900px;
+  margin-bottom: 18px;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* CASE STUDY + DASHBOARD SIDE BY SIDE */
+
+.project-layout {
+  display: grid;
+  grid-template-columns: minmax(0,1.35fr) minmax(270px,.85fr);
+  gap: 25px;
+  align-items: start;
+  margin-top: 30px;
+}
+
+.case-study {
+  display: grid;
+  gap: 14px;
+}
+
+.case-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 21px;
+}
+
+.case-block h3 {
+  color: var(--accent);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem;
+  margin-bottom: 9px;
+}
+
+.case-block p,
+.case-block li {
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.case-block ul {
+  padding-left: 20px;
+}
+
+.case-block li {
+  margin-bottom: 6px;
+}
+
+/* COMPACT DASHBOARDS */
+
+.dashboard-side {
+  position: sticky;
+  top: 95px;
+  min-width: 0;
+}
+
+.dashboard-side-title {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--accent);
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+}
+
+.dashboard-gallery {
+  display: grid;
+  gap: 15px;
+}
+
+.dashboard-card {
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  transition: .25s;
+}
+
+.dashboard-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.dashboard-card img {
+  width: 100%;
+  height: 155px;
+  object-fit: contain;
+  padding: 7px;
+  background: #0D1424;
+}
+
+.dashboard-caption {
+  padding: 11px 13px;
+  font-size: .87rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dashboard-caption span {
+  display: block;
+  color: var(--muted);
+  font-size: .77rem;
+  font-weight: 400;
+  margin-top: 3px;
+}
+
+.dashboard-link {
+  color: var(--accent);
+  display: inline-block;
+  font-size: .88rem;
+  margin-top: 15px;
+}
+
+.dashboard-link:hover {
+  color: var(--accent2);
+}
+
+/* CONTACT */
+
+.contact-panel {
+  background:
+    linear-gradient(130deg,rgba(167,139,250,.13),rgba(56,189,248,.06)),
+    var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 17px;
+  padding: 40px;
+}
+
+.contact-panel p {
+  color: var(--muted);
+  max-width: 650px;
+  margin-bottom: 23px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 25px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .87rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+  .nav-links {
+    gap: 13px;
+  }
+
+  .nav-links a {
+    font-size: .79rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .project-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-side {
+    position: static;
+  }
+
+  .dashboard-gallery {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+
+  .dashboard-card img {
+    height: 170px;
+  }
+}
+
+@media(max-width:620px) {
+  .section {
+    padding: 65px 0;
+  }
+
+  nav {
+    padding: 13px 0;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 5px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 75px 0;
+  }
+
+  .hero h1 {
+    letter-spacing: -1px;
+  }
+
+  .grid-2,
+  .grid-3,
+  .profile-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card img {
+    height: 190px;
+  }
+
+  .contact-panel {
+    padding: 27px 20px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
-  <header>
-    <nav class="container">
-      <a href="#home" class="logo">Jane<span>.</span></a>
+<!-- NAVIGATION -->
+<header>
+  <nav class="container">
+    <a href="#home" class="logo">Jane<span>.</span></a>
 
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#certifications">Certificates</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certificates</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- HERO -->
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-content">
-        <div class="availability">Aspiring Data Analyst</div>
+<main>
 
-        <h1>Hi, I'm <span class="accent">Jane Keerthana</span></h1>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <div class="availability">Aspiring Data Analyst</div>
 
-        <h2>Turning Data into Meaningful Insights</h2>
+    <h1>Hi, I'm <span class="accent">Jane Keerthana</span></h1>
 
-        <p>
-          Electronics and Communication Engineering graduate with professional
-          experience in back-office operations, data management and reporting.
-          Interested in using SQL, MySQL and Power BI to explore data,
-          identify patterns and support data-driven decisions.
-        </p>
+    <h2>Turning Data into Meaningful Insights</h2>
 
-        <div class="button-group">
-          <a href="#projects" class="btn btn-primary">Explore My Projects</a>
-          <a href="#contact" class="btn btn-outline">Contact Me</a>
+    <p>
+      Electronics and Communication Engineering graduate with
+      professional experience in back-office operations, data
+      management and reporting. Interested in using SQL, MySQL
+      and Power BI to explore data, identify patterns and support
+      data-driven decisions.
+    </p>
+
+    <div class="button-group">
+      <a href="#projects" class="btn btn-primary">Explore My Projects</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <p class="section-label">Introduction</p>
+    <h2 class="section-title">About <span class="accent">Me</span></h2>
+
+    <p class="about-text">
+      I am Jane Keerthana, an Electronics and Communication
+      Engineering graduate transitioning into the field of Data
+      Analytics. I have professional experience in back-office
+      operations, data entry, documentation, Excel reporting and
+      maintaining business records.
+      <br><br>
+      I am developing my analytical skills through hands-on projects
+      using SQL, MySQL and Power BI. My projects focus on data
+      preparation, business analysis, identifying trends and
+      presenting findings through interactive dashboards.
+      <br><br>
+      I am looking for an opportunity to begin my career as a
+      Data Analyst and contribute to meaningful, data-driven
+      business decisions.
+    </p>
+
+    <div class="profile-facts">
+      <div class="fact">
+        <small>Name</small>
+        <strong>Jane Keerthana</strong>
+      </div>
+      <div class="fact">
+        <small>Education</small>
+        <strong>Electronics and Communication Engineering</strong>
+      </div>
+      <div class="fact">
+        <small>Career Focus</small>
+        <strong>Data Analytics</strong>
+      </div>
+      <div class="fact">
+        <small>Email</small>
+        <strong>keerthisamy1997@gmail.com</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="section" id="skills">
+  <div class="container">
+    <p class="section-label">What I Work With</p>
+    <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+    <p class="section-intro">
+      Tools and skills I use for data preparation, analysis and reporting.
+    </p>
+
+    <div class="grid-3">
+
+      <div class="card skill-card">
+        <div class="skill-icon">⌘</div>
+        <h3>SQL & MySQL</h3>
+        <p>Querying databases and analysing structured data.</p>
+        <div class="skill-tags">
+          <span class="tag">SQL Queries</span>
+          <span class="tag">Joins</span>
+          <span class="tag">CTEs</span>
+          <span class="tag">Aggregations</span>
+          <span class="tag">Window Functions</span>
         </div>
       </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container">
-        <p class="section-label">Introduction</p>
-        <h2 class="section-title">About <span class="accent">Me</span></h2>
-
-        <p class="about-text">
-          I am Jane Keerthana, an Electronics and Communication Engineering
-          graduate transitioning into the field of Data Analytics. I have
-          professional experience in back-office operations, data entry,
-          documentation, Excel reporting and maintaining business records.
-          <br><br>
-          I am developing my analytical skills through hands-on projects
-          using SQL, MySQL and Power BI. My projects focus on cleaning data,
-          analysing business performance, identifying trends and presenting
-          findings through interactive dashboards.
-          <br><br>
-          I am looking for an opportunity to begin my career as a Data Analyst
-          and contribute to meaningful, data-driven business decisions.
-        </p>
-
-        <div class="profile-facts">
-          <div class="fact">
-            <small>Name</small>
-            <strong>Jane Keerthana</strong>
-          </div>
-          <div class="fact">
-            <small>Education</small>
-            <strong>Electronics and Communication Engineering</strong>
-          </div>
-          <div class="fact">
-            <small>Career Focus</small>
-            <strong>Data Analytics</strong>
-          </div>
-          <div class="fact">
-            <small>Email</small>
-            <strong>keerthisamy1997@gmail.com</strong>
-          </div>
+      <div class="card skill-card">
+        <div class="skill-icon">▥</div>
+        <h3>Power BI</h3>
+        <p>Building interactive reports and presenting business metrics.</p>
+        <div class="skill-tags">
+          <span class="tag">Dashboards</span>
+          <span class="tag">DAX</span>
+          <span class="tag">KPIs</span>
+          <span class="tag">Data Visualization</span>
         </div>
       </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <div class="container">
-        <p class="section-label">What I Work With</p>
-        <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
-        <p class="section-intro">
-          Tools and skills I use for data preparation, analysis and reporting.
-        </p>
-
-        <div class="grid-3">
-          <div class="card skill-card">
-            <div class="skill-icon">⌘</div>
-            <h3>SQL & MySQL</h3>
-            <p>Querying databases and analysing structured data.</p>
-            <div class="skill-tags">
-              <span class="tag">SQL Queries</span>
-              <span class="tag">Joins</span>
-              <span class="tag">CTEs</span>
-              <span class="tag">Aggregations</span>
-              <span class="tag">Window Functions</span>
-            </div>
-          </div>
-
-          <div class="card skill-card">
-            <div class="skill-icon">▥</div>
-            <h3>Power BI</h3>
-            <p>Building interactive reports and presenting business metrics.</p>
-            <div class="skill-tags">
-              <span class="tag">Dashboards</span>
-              <span class="tag">DAX</span>
-              <span class="tag">KPIs</span>
-              <span class="tag">Data Visualization</span>
-            </div>
-          </div>
-
-          <div class="card skill-card">
-            <div class="skill-icon">▤</div>
-            <h3>Microsoft Excel</h3>
-            <p>Organizing data and preparing reports for analysis.</p>
-            <div class="skill-tags">
-              <span class="tag">Data Cleaning</span>
-              <span class="tag">Pivot Tables</span>
-              <span class="tag">Reporting</span>
-              <span class="tag">Spreadsheets</span>
-            </div>
-          </div>
-
-          <div class="card skill-card">
-            <div class="skill-icon">⌘</div>
-            <h3>Data Analytics</h3>
-            <p>Exploring datasets and understanding business performance.</p>
-            <div class="skill-tags">
-              <span class="tag">Data Preparation</span>
-              <span class="tag">EDA</span>
-              <span class="tag">Trend Analysis</span>
-            </div>
-          </div>
-
-          <div class="card skill-card">
-            <div class="skill-icon">{} </div>
-            <h3>Programming</h3>
-            <p>Foundational programming knowledge.</p>
-            <div class="skill-tags">
-              <span class="tag">Java</span>
-            </div>
-          </div>
-
-          <div class="card skill-card">
-            <div class="skill-icon">▣</div>
-            <h3>Professional Skills</h3>
-            <p>Experience supporting day-to-day business operations.</p>
-            <div class="skill-tags">
-              <span class="tag">Documentation</span>
-              <span class="tag">Record Management</span>
-              <span class="tag">Reporting</span>
-              <span class="tag">Attention to Detail</span>
-            </div>
-          </div>
+      <div class="card skill-card">
+        <div class="skill-icon">▤</div>
+        <h3>Microsoft Excel</h3>
+        <p>Organizing data and preparing reports for analysis.</p>
+        <div class="skill-tags">
+          <span class="tag">Data Cleaning</span>
+          <span class="tag">Pivot Tables</span>
+          <span class="tag">Reporting</span>
+          <span class="tag">Spreadsheets</span>
         </div>
       </div>
-    </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section" id="experience">
-      <div class="container">
-        <p class="section-label">Professional Background</p>
-        <h2 class="section-title">Work <span class="accent">Experience</span></h2>
-        <p class="section-intro">
-          My professional experience in back-office operations,
-          documentation and business data management.
-        </p>
+      <div class="card skill-card">
+        <div class="skill-icon">⌘</div>
+        <h3>Data Analytics</h3>
+        <p>Exploring datasets and understanding business performance.</p>
+        <div class="skill-tags">
+          <span class="tag">Data Preparation</span>
+          <span class="tag">EDA</span>
+          <span class="tag">Trend Analysis</span>
+        </div>
+      </div>
 
-        <div class="timeline">
-          <div class="card timeline-card">
-            <div class="timeline-date">25 October 2024 – Present</div>
-            <h3>Back Office / Data Operations</h3>
-            <p><strong>Aveltron Exim</strong></p>
+      <div class="card skill-card">
+        <div class="skill-icon">{ }</div>
+        <h3>Programming</h3>
+        <p>Foundational programming knowledge.</p>
+        <div class="skill-tags">
+          <span class="tag">Java</span>
+        </div>
+      </div>
+
+      <div class="card skill-card">
+        <div class="skill-icon">▣</div>
+        <h3>Professional Skills</h3>
+        <p>Experience supporting day-to-day business operations.</p>
+        <div class="skill-tags">
+          <span class="tag">Documentation</span>
+          <span class="tag">Record Management</span>
+          <span class="tag">Reporting</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="container">
+    <p class="section-label">Professional Background</p>
+    <h2 class="section-title">Work <span class="accent">Experience</span></h2>
+
+    <div class="timeline">
+
+      <div class="card timeline-card">
+        <div class="timeline-date">25 October 2024 – Present</div>
+        <h3>Back Office / Data Operations</h3>
+        <p><strong>Aveltron Exim</strong></p>
+        <ul>
+          <li>Performing data entry and maintaining business documentation.</li>
+          <li>Working with Excel spreadsheets and preparing reports.</li>
+          <li>Maintaining records, reports, spreadsheets and databases.</li>
+          <li>Organizing business information and supporting daily operations.</li>
+        </ul>
+      </div>
+
+      <div class="card timeline-card">
+        <div class="timeline-date">16 November 2020 – 18 September 2024</div>
+        <h3>Back Office Executive</h3>
+        <p><strong>Jothi Softtech</strong></p>
+        <ul>
+          <li>Performed data entry and documentation activities.</li>
+          <li>Prepared and maintained Excel reports.</li>
+          <li>Supported administrative and back-office operations.</li>
+          <li>Organized records and maintained business information.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section class="section" id="education">
+  <div class="container">
+    <p class="section-label">Academic Background</p>
+    <h2 class="section-title">My <span class="accent">Education</span></h2>
+
+    <div class="card">
+      <div class="project-number">ENGINEERING</div>
+      <h3>Electronics and Communication Engineering</h3>
+      <p>College Name: <strong>MZCET</strong></p>
+      <p>Passing Year: <strong>2018</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="section" id="certifications">
+  <div class="container">
+    <p class="section-label">Learning & Development</p>
+    <h2 class="section-title">Certifi<span class="accent">cations</span></h2>
+
+    <div class="grid-2">
+
+      <div class="card">
+        <div class="certificate-icon">✦</div>
+        <h3>Foundations of Data Analytics</h3>
+        <p>Google / Coursera</p>
+      </div>
+
+      <div class="card">
+        <div class="certificate-icon">✦</div>
+        <h3>Data Analyst 2026</h3>
+        <p>Alex The Analyst</p>
+      </div>
+
+      <div class="card">
+        <div class="certificate-icon">⌘</div>
+        <h3>Java Certificate</h3>
+        <p>IIHT Chennai</p>
+      </div>
+
+      <div class="card">
+        <div class="certificate-icon">⌘</div>
+        <h3>SQL Certificate</h3>
+        <p>IIHT Chennai</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="container">
+    <p class="section-label">My Work</p>
+    <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+    <p class="section-intro">
+      Practical analytics projects demonstrating data preparation,
+      SQL analysis and interactive Power BI reporting.
+    </p>
+
+    <!-- PROJECT 1: SALES -->
+    <div class="project-section" id="sales-project">
+
+      <div class="project-number">PROJECT 01</div>
+      <h2 class="project-title">Sales Analytics Using MySQL & Power BI</h2>
+
+      <p class="project-description">
+        An end-to-end sales analytics project focused on data preparation,
+        SQL-based business analysis and interactive Power BI dashboards.
+        The project explores revenue trends, product performance,
+        sales volume and target achievement.
+      </p>
+
+      <div class="skill-tags">
+        <span class="tag">MySQL</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">DAX</span>
+        <span class="tag">Data Visualization</span>
+      </div>
+
+      <div class="project-links">
+        <a class="btn btn-primary"
+           href="https://github.com/Jane-data-analytics/sales-analytics-mysql-powerbi"
+           target="_blank" rel="noopener noreferrer">
+          View GitHub Repository ↗
+        </a>
+      </div>
+
+      <div class="project-layout">
+
+        <!-- SALES CASE STUDY LEFT -->
+        <div class="case-study">
+
+          <div class="case-block">
+            <h3>01. Project Overview</h3>
+            <p>
+              This project explores sales performance using MySQL and
+              Power BI. The workflow includes data preparation, SQL
+              analysis, KPI development and dashboard creation to
+              understand revenue trends, product performance and sales targets.
+            </p>
+          </div>
+
+          <div class="case-block">
+            <h3>02. Project Objectives</h3>
             <ul>
-              <li>Performing data entry and maintaining business documentation.</li>
-              <li>Working with Excel spreadsheets and preparing reports.</li>
-              <li>Maintaining records, reports, spreadsheets and databases.</li>
-              <li>Organizing business information and supporting daily operations.</li>
+              <li>Understand overall sales and revenue performance.</li>
+              <li>Identify monthly revenue trends and patterns.</li>
+              <li>Analyse product-level sales and contribution.</li>
+              <li>Compare actual sales with target values.</li>
+              <li>Present business performance through interactive dashboards.</li>
             </ul>
           </div>
 
-          <div class="card timeline-card">
-            <div class="timeline-date">16 November 2020 – 18 September 2024</div>
-            <h3>Back Office Executive</h3>
-            <p><strong>Jothi Softtech</strong></p>
+          <div class="case-block">
+            <h3>03. Tools & Technologies</h3>
             <ul>
-              <li>Performed data entry and documentation activities.</li>
-              <li>Prepared and maintained Excel reports.</li>
-              <li>Supported administrative and back-office operations.</li>
-              <li>Organized records and ensured accuracy of business information.</li>
+              <li><strong>MySQL:</strong> Database management and analysis.</li>
+              <li><strong>SQL:</strong> Data querying, filtering and aggregations.</li>
+              <li><strong>Power BI:</strong> Interactive dashboard development.</li>
+              <li><strong>DAX:</strong> Measures and KPI calculations.</li>
             </ul>
           </div>
+
+          <div class="case-block">
+            <h3>04. Data Cleaning & Preparation</h3>
+            <ul>
+              <li>Reviewed the structure of the sales dataset.</li>
+              <li>Checked data quality and consistency.</li>
+              <li>Prepared data for analysis.</li>
+              <li>Standardized relevant date and text fields.</li>
+              <li>Prepared sales metrics for business reporting.</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3>05. SQL Analysis Using MySQL</h3>
+            <p>Performed business-focused analysis using SQL concepts such as:</p>
+            <ul>
+              <li>Aggregate functions and GROUP BY.</li>
+              <li>Common Table Expressions (CTEs).</li>
+              <li>Window functions.</li>
+              <li>Total revenue and quantity analysis.</li>
+              <li>Product-level performance.</li>
+              <li>Monthly sales comparisons.</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3>06. Power BI Dashboard Development</h3>
+            <p>
+              Developed three dashboard pages to explore sales
+              performance from different business perspectives.
+            </p>
+            <ul>
+              <li><strong>Sales Analytics Overview:</strong> Revenue, sales volume and trends.</li>
+              <li><strong>Product Overview:</strong> Product revenue and contribution.</li>
+              <li><strong>Sales Target Analysis:</strong> Actual versus target performance.</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3>07. Key Analysis Areas</h3>
+            <ul>
+              <li>Overall sales and revenue performance.</li>
+              <li>Monthly revenue movement.</li>
+              <li>Top-performing products.</li>
+              <li>Product contribution to total revenue.</li>
+              <li>Sales target achievement.</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3>08. Project Outcome</h3>
+            <p>
+              This project provided practical experience in preparing
+              sales data, writing SQL queries, analysing business
+              metrics and developing interactive Power BI dashboards.
+              It demonstrates an end-to-end data analytics workflow
+              from data preparation to visual reporting.
+            </p>
+          </div>
+
         </div>
-      </div>
-    </section>
 
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-      <div class="container">
-        <p class="section-label">Academic Background</p>
-        <h2 class="section-title">My <span class="accent">Education</span></h2>
+        <!-- SALES DASHBOARDS RIGHT -->
+        <aside class="dashboard-side">
+          <h3 class="dashboard-side-title">Dashboard Preview</h3>
 
-        <div class="card">
-          <div class="project-number">ENGINEERING</div>
-          <h3>Electronics and Communication Engineering</h3>
-          <p>College Name: <strong>MZCET</strong></p>
-          <p>Passing Year: <strong>2018</strong></p>
-        </div>
-      </div>
-    </section>
+          <div class="dashboard-gallery">
 
-    <!-- CERTIFICATIONS -->
-    <section class="section" id="certifications">
-      <div class="container">
-        <p class="section-label">Learning & Development</p>
-        <h2 class="section-title">Certifi<span class="accent">cations</span></h2>
-        <p class="section-intro">
-          Certifications and additional learning related to analytics
-          and programming.
-        </p>
-
-        <div class="grid-2">
-          <div class="card certificate-card">
-            <div class="certificate-icon">✦</div>
-            <h3>Foundations of Data Analytics</h3>
-            <p>Google / Coursera</p>
-          </div>
-
-          <div class="card certificate-card">
-            <div class="certificate-icon">✦</div>
-            <h3>Data Analyst 2026</h3>
-            <p>Alex The Analyst</p>
-          </div>
-
-          <div class="card certificate-card">
-            <div class="certificate-icon">⌘</div>
-            <h3>Java Certificate</h3>
-            <p>IIHT Chennai</p>
-          </div>
-
-          <div class="card certificate-card">
-            <div class="certificate-icon">⌘</div>
-            <h3>SQL Certificate</h3>
-            <p>IIHT Chennai</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-      <div class="container">
-        <p class="section-label">My Work</p>
-        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
-        <p class="section-intro">
-          Practical data analytics projects demonstrating data preparation,
-          SQL analysis and interactive Power BI reporting.
-        </p>
-
-        <!-- PROJECT 1: SALES ANALYTICS -->
-        <div id="sales-project">
-          <div class="project-number">PROJECT 01</div>
-          <h2 class="project-title">Sales Analytics Using MySQL & Power BI</h2>
-
-          <p class="project-description">
-            An end-to-end sales analytics project focused on data cleaning,
-            SQL-based business analysis and interactive Power BI dashboards.
-            The project explores revenue trends, product performance,
-            sales volume and target achievement.
-          </p>
-
-          <div class="skill-tags">
-            <span class="tag">MySQL</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">DAX</span>
-            <span class="tag">Data Visualization</span>
-          </div>
-
-          <div class="project-links">
-            <a class="btn btn-primary"
-               href="https://github.com/Jane-data-analytics/sales-analytics-mysql-powerbi"
-               target="_blank" rel="noopener noreferrer">
-              View GitHub Repository ↗
-            </a>
-          </div>
-
-          <!-- SALES CASE STUDY -->
-          <div class="case-study">
-            <div class="case-block">
-              <h3>1. Project Overview</h3>
-              <p>
-                This project explores sales performance using MySQL and
-                Microsoft Power BI. The workflow includes data preparation,
-                SQL analysis, KPI development and dashboard creation to
-                understand revenue trends, product performance and sales targets.
-              </p>
-            </div>
-
-            <div class="case-block">
-              <h3>2. Project Objectives</h3>
-              <ul>
-                <li>Understand overall sales and revenue performance.</li>
-                <li>Identify monthly revenue trends and patterns.</li>
-                <li>Analyse product-level sales and contribution.</li>
-                <li>Compare actual sales with target values.</li>
-                <li>Present business performance through interactive dashboards.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>3. Tools & Technologies</h3>
-              <ul>
-                <li><strong>MySQL:</strong> Database management and data analysis.</li>
-                <li><strong>SQL:</strong> Data cleaning, querying and business analysis.</li>
-                <li><strong>Power BI:</strong> Interactive dashboard development.</li>
-                <li><strong>DAX:</strong> Measures and KPI calculations.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>4. Data Cleaning & Preparation</h3>
-              <ul>
-                <li>Created a working copy of the raw sales dataset.</li>
-                <li>Identified and removed duplicate records.</li>
-                <li>Standardized date formats and converted dates to DATE type.</li>
-                <li>Cleaned text fields and handled missing or invalid values.</li>
-                <li>Calculated sales revenue using quantity and unit price.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>5. SQL Analysis Using MySQL</h3>
-              <p>Performed sales analysis using SQL concepts such as:</p>
-              <ul>
-                <li>Aggregate functions and GROUP BY.</li>
-                <li>Common Table Expressions (CTEs).</li>
-                <li>Window functions and LAG().</li>
-                <li>Total revenue and quantity analysis.</li>
-                <li>Product-level revenue and top-performing products.</li>
-                <li>Cumulative revenue and month-over-month growth.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>6. Power BI Dashboard Development</h3>
-              <p>
-                Developed a Power BI report with three pages to explore
-                sales performance from different business perspectives.
-              </p>
-              <ul>
-                <li><strong>Sales Analytics Overview:</strong> Revenue, order volume, quantity sold and monthly trends.</li>
-                <li><strong>Product Overview:</strong> Product-level revenue, quantity sold and product contribution.</li>
-                <li><strong>Sales Target Analysis:</strong> Actual sales compared with targets and performance differences.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>7. Key Analysis Areas</h3>
-              <ul>
-                <li>Overall sales and revenue performance.</li>
-                <li>Monthly revenue movement.</li>
-                <li>Top-performing products.</li>
-                <li>Product contribution to total revenue.</li>
-                <li>Sales target achievement.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>8. Project Outcome</h3>
-              <p>
-                This project provided practical experience in cleaning sales
-                data, writing SQL queries, analysing business metrics and
-                developing interactive Power BI dashboards. It demonstrates
-                an end-to-end data analytics workflow, from raw data preparation
-                to visual reporting.
-              </p>
-            </div>
-          </div>
-
-          <!-- SALES DASHBOARD GALLERY -->
-          <div style="margin-top: 38px;">
-            <p class="section-label">Dashboard Preview</p>
-            <h3 class="section-title" style="font-size:1.7rem;">
-              Sales Analytics <span class="accent">Dashboards</span>
-            </h3>
-
-            <div class="gallery">
-              <div class="dashboard-card">
+            <div class="dashboard-card">
+              <a href="https://raw.githubusercontent.com/Jane-data-analytics/sales-analytics-mysql-powerbi/main/Sales_Analytics_Overview.png"
+                 target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://raw.githubusercontent.com/Jane-data-analytics/sales-analytics-mysql-powerbi/main/Sales_Analytics_Overview.png"
-                  alt="Sales Analytics Overview Power BI Dashboard"
+                  alt="Sales Analytics Overview Dashboard"
                   loading="lazy">
-                <div class="dashboard-caption">
-                  01. Sales Analytics Overview
-                  <span>Revenue, sales volume and monthly trends</span>
-                </div>
+              </a>
+              <div class="dashboard-caption">
+                01. Sales Analytics Overview
+                <span>Revenue and sales trends</span>
               </div>
+            </div>
 
-              <div class="dashboard-card">
+            <div class="dashboard-card">
+              <a href="https://raw.githubusercontent.com/Jane-data-analytics/sales-analytics-mysql-powerbi/main/Product_Overview.png"
+                 target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://raw.githubusercontent.com/Jane-data-analytics/sales-analytics-mysql-powerbi/main/Product_Overview.png"
-                  alt="Product Overview Power BI Dashboard"
+                  alt="Product Overview Dashboard"
                   loading="lazy">
-                <div class="dashboard-caption">
-                  02. Product Overview
-                  <span>Product revenue, quantity and contribution</span>
-                </div>
+              </a>
+              <div class="dashboard-caption">
+                02. Product Overview
+                <span>Product sales performance</span>
               </div>
+            </div>
 
-              <div class="dashboard-card">
+            <div class="dashboard-card">
+              <a href="https://raw.githubusercontent.com/Jane-data-analytics/sales-analytics-mysql-powerbi/main/Sales_Target_Analysis.png"
+                 target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://raw.githubusercontent.com/Jane-data-analytics/sales-analytics-mysql-powerbi/main/Sales_Target_Analysis.png"
-                  alt="Sales Target Analysis Power BI Dashboard"
+                  alt="Sales Target Analysis Dashboard"
                   loading="lazy">
-                <div class="dashboard-caption">
-                  03. Sales Target Analysis
-                  <span>Actual sales versus target performance</span>
-                </div>
+              </a>
+              <div class="dashboard-caption">
+                03. Sales Target Analysis
+                <span>Actual versus target performance</span>
               </div>
             </div>
+
           </div>
+
+          <a class="dashboard-link"
+             href="https://github.com/Jane-data-analytics/sales-analytics-mysql-powerbi"
+             target="_blank" rel="noopener noreferrer">
+            View Sales Project on GitHub ↗
+          </a>
+        </aside>
+
+      </div>
+    </div>
+
+    <!-- PROJECT 2: OLIST -->
+    <div class="project-section" id="olist-project">
+
+      <div class="project-number">PROJECT 02</div>
+      <h2 class="project-title">Brazilian E-Commerce Analytics | Olist</h2>
+
+      <p class="project-description">
+        An end-to-end e-commerce analytics project using the Brazilian
+        E-Commerce Public Dataset by Olist. The project explores customer
+        purchasing behaviour, sales performance, products, payments
+        and order delivery performance.
+      </p>
+
+      <div class="skill-tags">
+        <span class="tag">Excel</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">SQL</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">Data Analytics</span>
+      </div>
+
+      <div class="project-links">
+        <a class="btn btn-primary"
+           href="https://github.com/Jane-data-analytics/olist-ecommerce-analytics"
+           target="_blank" rel="noopener noreferrer">
+          View GitHub Repository ↗
+        </a>
+      </div>
+
+      <div class="project-layout">
+
+        <!-- OLIST CASE STUDY LEFT -->
+        <div class="case-study">
+
+          <div class="case-block">
+            <h3>01. Project Overview</h3>
+            <p>
+              This project analyses the Brazilian E-Commerce Public
+              Dataset by Olist. It explores orders, customers, products,
+              sellers, payments and customer reviews to generate
+              meaningful business insights.
+            </p>
+          </div>
+
+          <div class="case-block">
+            <h3>02. Project Objectives</h3>
+            <ul>
+              <li>Analyse sales and revenue performance.</li>
+              <li>Understand customer purchasing behaviour.</li>
+              <li>Identify order trends and product performance.</li>
+              <li>Explore payment methods and customer reviews.</li>
+              <li>Understand delivery and fulfilment performance.</li>
+              <li>Build interactive dashboards for business reporting.</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3>03. Tools & Technologies</h3>
+            <ul>
+              <li><strong>Excel:</strong> Data preparation, cleaning, Pivot Tables and EDA.</li>
+              <li><strong>MySQL:</strong> Data management and SQL analysis.</li>
+              <li><strong>Power BI:</strong> Interactive dashboards and visualization.</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3>04. Data Preparation & Exploration</h3>
+            <ul>
+              <li>Explored the Olist dataset and its related tables.</li>
+              <li>Prepared and organized data for analysis.</li>
+              <li>Checked duplicate records and data consistency.</li>
+              <li>Reviewed relationships between customers, orders, products, sellers, payments and reviews.</li>
+              <li>Performed exploratory analysis to understand the dataset.</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3>05. SQL Analysis Using MySQL</h3>
+            <p>Used SQL queries to explore key e-commerce business areas:</p>
+            <ul>
+              <li>Sales and revenue performance.</li>
+              <li>Order trends and purchasing patterns.</li>
+              <li>Customer behaviour and repeat purchases.</li>
+              <li>Product category performance.</li>
+              <li>Seller performance.</li>
+              <li>Payment method analysis.</li>
+              <li>Customer review analysis.</li>
+              <li>Delivery and order fulfilment performance.</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3>06. Power BI Dashboard Development</h3>
+            <p>
+              Developed an interactive dashboard to present e-commerce
+              performance indicators and business insights.
+            </p>
+            <ul>
+              <li>Total Orders</li>
+              <li>Total Revenue</li>
+              <li>Total Customers</li>
+              <li>Average Order Value (AOV)</li>
+              <li>Monthly Revenue and Order Trends</li>
+              <li>Order Status Analysis</li>
+              <li>Top 5 Products Analysis</li>
+              <li>Payment Methods Analysis</li>
+              <li>Orders by Customer State</li>
+              <li>Year, Month and Customer State filters</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3>07. Business Analysis Areas</h3>
+            <ul>
+              <li>Sales and revenue performance.</li>
+              <li>Customer purchasing patterns.</li>
+              <li>Product and category performance.</li>
+              <li>Payment behaviour.</li>
+              <li>Order delivery and fulfilment.</li>
+              <li>Customer review patterns.</li>
+            </ul>
+          </div>
+
+          <div class="case-block">
+            <h3>08. Project Outcome</h3>
+            <p>
+              This project strengthened my practical understanding
+              of multi-table datasets, data preparation, SQL-based
+              analysis and Power BI dashboard development. It
+              demonstrates how e-commerce data can be transformed
+              into structured reports to understand customer
+              behaviour and business performance.
+            </p>
+          </div>
+
         </div>
 
-        <!-- PROJECT 2: OLIST -->
-        <div id="olist-project" style="margin-top: 100px;">
-          <div class="project-number">PROJECT 02</div>
-          <h2 class="project-title">Brazilian E-Commerce Analytics | Olist</h2>
+        <!-- OLIST DASHBOARD RIGHT -->
+        <aside class="dashboard-side">
+          <h3 class="dashboard-side-title">Dashboard Preview</h3>
 
-          <p class="project-description">
-            An end-to-end e-commerce analytics project using the Brazilian
-            E-Commerce Public Dataset by Olist. The project explores customer
-            purchasing behaviour, sales performance, product categories,
-            payments, reviews and order delivery performance.
-          </p>
-
-          <div class="skill-tags">
-            <span class="tag">MySQL</span>
-            <span class="tag">SQL</span>
-            <span class="tag">Excel</span>
-            <span class="tag">Power BI</span>
-            <span class="tag">Data Analytics</span>
-          </div>
-
-          <div class="project-links">
-            <a class="btn btn-primary"
-               href="https://github.com/Jane-data-analytics/olist-ecommerce-analytics"
-               target="_blank" rel="noopener noreferrer">
-              View GitHub Repository ↗
-            </a>
-          </div>
-
-          <!-- OLIST CASE STUDY -->
-          <div class="case-study">
-            <div class="case-block">
-              <h3>1. Project Overview</h3>
-              <p>
-                This project analyses the Brazilian E-Commerce Public Dataset
-                by Olist. It explores order transactions, customers, products,
-                sellers, payments and customer reviews to generate meaningful
-                business insights.
-              </p>
-            </div>
-
-            <div class="case-block">
-              <h3>2. Project Objectives</h3>
-              <ul>
-                <li>Analyse sales and revenue performance.</li>
-                <li>Understand customer purchasing behaviour.</li>
-                <li>Identify order trends and product category performance.</li>
-                <li>Explore payment methods and customer reviews.</li>
-                <li>Understand delivery and order fulfilment performance.</li>
-                <li>Build interactive dashboards for business reporting.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>3. Tools & Technologies</h3>
-              <ul>
-                <li><strong>Excel:</strong> Data preparation, cleaning, Pivot Tables and exploratory analysis.</li>
-                <li><strong>MySQL:</strong> Data management, transformation and SQL analysis.</li>
-                <li><strong>Power BI:</strong> Interactive dashboard and data visualization.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>4. Data Preparation & Exploration</h3>
-              <ul>
-                <li>Explored the Olist dataset and its multiple related tables.</li>
-                <li>Prepared and organized data for analysis.</li>
-                <li>Checked duplicate records and data consistency.</li>
-                <li>Reviewed relationships between customers, orders, products, sellers, payments and reviews.</li>
-                <li>Used appropriate aggregation to avoid double-counting when combining tables.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>5. SQL Analysis Using MySQL</h3>
-              <p>Used SQL queries to explore key e-commerce business areas:</p>
-              <ul>
-                <li>Sales and revenue performance.</li>
-                <li>Order trends and purchasing patterns.</li>
-                <li>Customer behaviour and repeat purchases.</li>
-                <li>Product category performance.</li>
-                <li>Seller performance.</li>
-                <li>Payment method analysis.</li>
-                <li>Customer review analysis.</li>
-                <li>Delivery and order fulfilment performance.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>6. Power BI Dashboard Development</h3>
-              <p>
-                Developed an interactive Power BI dashboard to present
-                e-commerce performance indicators and business insights.
-                The report includes key metrics, charts and slicers to
-                explore the dataset.
-              </p>
-              <ul>
-                <li>Total Orders</li>
-                <li>Total Revenue</li>
-                <li>Total Customers</li>
-                <li>Average Order Value (AOV)</li>
-                <li>Monthly Revenue and Order Trends</li>
-                <li>Order Status Analysis</li>
-                <li>Top 5 Products Analysis</li>
-                <li>Payment Methods Analysis</li>
-                <li>Orders by Customer State</li>
-                <li>Year, Month and Customer State filters</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>7. Business Analysis Areas</h3>
-              <ul>
-                <li>Sales and revenue performance.</li>
-                <li>Customer purchasing patterns.</li>
-                <li>Product and category performance.</li>
-                <li>Payment behaviour.</li>
-                <li>Order delivery and fulfilment.</li>
-                <li>Customer review patterns.</li>
-              </ul>
-            </div>
-
-            <div class="case-block">
-              <h3>8. Project Outcome</h3>
-              <p>
-                This project strengthened my practical understanding of
-                multi-table datasets, data preparation, SQL-based analysis
-                and Power BI dashboard development. It demonstrates how
-                e-commerce data can be transformed into structured reports
-                that help understand customer behaviour and business performance.
-              </p>
-            </div>
-          </div>
-
-          <!-- OLIST DASHBOARD IMAGE -->
-          <div style="margin-top: 38px;">
-            <p class="section-label">Dashboard Preview</p>
-            <h3 class="section-title" style="font-size:1.7rem;">
-              Olist E-Commerce <span class="accent">Dashboard</span>
-            </h3>
-
-            <div class="gallery">
-              <div class="dashboard-card">
+          <div class="dashboard-gallery">
+            <div class="dashboard-card">
+              <a href="https://raw.githubusercontent.com/Jane-data-analytics/olist-ecommerce-analytics/main/images/Olist%20E-commerce%20Dashboard.png"
+                 target="_blank" rel="noopener noreferrer">
                 <img
                   src="https://raw.githubusercontent.com/Jane-data-analytics/olist-ecommerce-analytics/main/images/Olist%20E-commerce%20Dashboard.png"
                   alt="Brazilian E-Commerce Olist Power BI Dashboard"
                   loading="lazy">
-                <div class="dashboard-caption">
-                  Brazilian E-Commerce Analytics Dashboard
-                  <span>Sales, customers, orders and e-commerce performance</span>
-                </div>
+              </a>
+              <div class="dashboard-caption">
+                Brazilian E-Commerce Dashboard
+                <span>Sales, customers, orders and performance</span>
               </div>
             </div>
-
-            <a class="dashboard-link"
-               href="https://github.com/Jane-data-analytics/olist-ecommerce-analytics"
-               target="_blank" rel="noopener noreferrer">
-              Explore Olist project files on GitHub ↗
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="contact-panel">
-          <p class="section-label">Get In Touch</p>
-          <h2 class="section-title">
-            Let's Connect & <span class="accent">Work Together</span>
-          </h2>
-          <p>
-            I am interested in starting my career in Data Analytics and
-            exploring opportunities where I can apply my technical,
-            analytical and professional skills.
-          </p>
-
-          <div class="button-group">
-            <a class="btn btn-primary" href="mailto:1997@gmail.com">
-              Email Me
-            </a>
-            <a class="btn btn-outline"
-               href="https://github.com/Jane-data-analytics"
-               target="_blank" rel="noopener noreferrer">
-              GitHub Profile ↗
-            </a>
           </div>
 
-          <p style="margin-top:22px; margin-bottom:0;">
-            Email:keerthisamy1997@gmail.com
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
+          <a class="dashboard-link"
+             href="https://github.com/Jane-data-analytics/olist-ecommerce-analytics"
+             target="_blank" rel="noopener noreferrer">
+            Explore Olist Project on GitHub ↗
+          </a>
+        </aside>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p>© 2026 Jane Keerthana. Built with passion for Data Analytics.</p>
+      </div>
     </div>
-  </footer>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-panel">
+      <p class="section-label">Get In Touch</p>
+
+      <h2 class="section-title">
+        Let's Connect & <span class="accent">Work Together</span>
+      </h2>
+
+      <p>
+        I am interested in starting my career in Data Analytics
+        and exploring opportunities where I can apply my technical,
+        analytical and professional skills.
+      </p>
+
+      <div class="button-group">
+        <a class="btn btn-primary" href="mailto:1997@gmail.com">
+          Email Me
+        </a>
+
+        <a class="btn btn-outline"
+           href="https://github.com/Jane-data-analytics"
+           target="_blank" rel="noopener noreferrer">
+          GitHub Profile ↗
+        </a>
+      </div>
+
+      <p style="margin-top:20px;margin-bottom:0;">
+        Email:keerthisamy1997@gmail.com
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Jane Keerthana. Built with passion for Data Analytics.</p>
+  </div>
+</footer>
 
 </body>
 </html>
